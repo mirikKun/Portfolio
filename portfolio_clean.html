@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrii Miroshnyk - Gameplay & Systems Programmer</title>
+  <style>
+    :root {
+      --bg: #0c111b;
+      --card: #141b2a;
+      --text: #e7ecf5;
+      --muted: #a6b2c7;
+      --line: #283247;
+      --accent: #7ab5ff;
+      --accent-soft: #1a2842;
+      --todo-bg: #3a3016;
+      --todo-text: #f5da86;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+
+    #commercial { order: 1; }
+    #jams { order: 2; }
+    #unavailable { order: 3; }
+    #pet { order: 4; }
+
+    .hero,
+    .toc,
+    .section,
+    .project {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 10px;
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin-top: 14px;
+    }
+
+    p {
+      margin: 8px 0;
+    }
+
+    .role {
+      display: inline-block;
+      margin: 8px 0 10px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .keyword {
+      display: inline-block;
+      font-size: 0.82rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 8px;
+      background: #172236;
+      font-weight: 600;
+    }
+
+    .toc ul,
+    .section ul,
+    .project ul {
+      margin: 8px 0;
+      padding-left: 18px;
+    }
+
+    .toc a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    .meta {
+      display: grid;
+      gap: 6px;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      margin-bottom: 10px;
+    }
+
+    .meta-item {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 8px 10px;
+      background: #101a2d;
+      font-size: 0.94rem;
+    }
+
+    .k {
+      font-weight: 700;
+    }
+
+    .todo {
+      display: inline-block;
+      background: var(--todo-bg);
+      color: var(--todo-text);
+      border: 1px solid #7d6a2b;
+      border-radius: 8px;
+      padding: 2px 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-left: 6px;
+    }
+
+    .project-links a {
+      color: var(--accent);
+      word-break: break-word;
+    }
+
+    .media-grid {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .media-grid.two-by-two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .media-grid img {
+      width: 100%;
+      height: 240px;
+      object-fit: contain;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      display: block;
+      background: #0f1625;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero" id="home">
+      <h1><strong>Andrii Miroshnyk</strong></h1>
+      <div class="role"><strong>Gameplay &amp; Systems Programmer</strong></div>
+      <p>
+        I build <strong>gameplay systems</strong> with a focus on <strong>clean architecture</strong>,
+        <strong>fast iteration</strong>, and strong <strong>game feel</strong>.
+      </p>
+      <p class="muted">
+        <span class="k">Location:</span> Copenhagen, Denmark |
+        <span class="k">Email:</span> <a href="mailto:mirikandrew@gmail.com">mirikandrew@gmail.com</a> |
+        <span class="k">LinkedIn:</span> <a href="https://www.linkedin.com/in/andrii-mirik/">andrii-mirik</a> |
+        <span class="k">itch.io:</span> <a href="https://enryu-mirik.itch.io/">enryu-mirik</a>
+      </p>
+      <div class="keywords">
+        <span class="keyword">UNITY</span>
+        <span class="keyword">C#</span>
+        <span class="keyword">GAMEPLAY SYSTEMS</span>
+        <span class="keyword">CLEAN ARCHITECTURE</span>
+        <span class="keyword">GAME FEEL</span>
+        <span class="keyword">RAPID DELIVERY</span>
+      </div>
+    </section>
+
+    <nav class="toc" aria-label="Table of Contents">
+      <h2><strong>Table of Contents</strong></h2>
+      <ul>
+        <li><a href="#commercial"><strong>Commercial Projects</strong></a></li>
+        <li><a href="#jams"><strong>Game Jam Projects</strong></a></li>
+        <li><a href="#unavailable"><strong>Commercial Projects (No Longer Available)</strong></a></li>
+        <li><a href="#pet"><strong>Pet Projects</strong></a></li>
+      </ul>
+    </nav>
+
+    <section class="section" id="commercial">
+      <h2><strong>Commercial Projects</strong></h2>
+
+      <article class="project">
+        <h3><strong>Love Blast: Block Puzzle</strong></h3>
+        <div class="meta">
+          <div class="meta-item"><span class="k">Type:</span> Commercial</div>
+          <div class="meta-item"><span class="k">Role:</span> Gameplay &amp; Systems Programmer</div>
+          <div class="meta-item"><span class="k">Timeline:</span> 1 year</div>
+          <div class="meta-item"><span class="k">Developers:</span> 3</div>
+          <div class="meta-item"><span class="k">Total Team Size:</span> 11 (dev + art + design + QA)</div>
+        </div>
+
+        <p><span class="k">Overview:</span> Implemented and expanded puzzle gameplay features for a released mobile title.</p>
+
+        <h3><strong>What I Built</strong></h3>
+        <ul>
+          <li>Implemented core <strong>Block Blast-style gameplay</strong> with figure spawn logic, VFX, combo systems, and polished game feel.</li>
+          <li>Built a <strong>player retention system</strong> with continuous difficulty balancing and controlled figure drop behavior.</li>
+          <li>Built <strong>chat UI</strong> with Telegram-like animations and notifications, and added an <strong>Instagram-like gallery</strong> with custom animations.</li>
+          <li>Built <strong>REST API analytics integration</strong> and automated data pipeline streaming to BigQuery, generating retention/engagement reports and telemetry hooks that track player actions.</li>
+          <li>Built a <strong>400-level progression system</strong> and created a Google Sheets pipeline where designers fill level data that is automatically imported into the game, including CSV import tools for rapid balance iteration.</li>
+          <li>Implemented a <strong>full tutorial system</strong>.</li>
+          <li>Created custom <strong>Unity Editor tools</strong> for technical artists and level designers: level editor with visual validation, automated asset validators, and content pipeline automation.</li>
+        </ul>
+
+        <h3><strong>Challenges</strong></h3>
+        <ul>
+          <li>The game went through several major redesign phases, and due to flexible architecture these changes were implemented quickly with minimal bugs.</li>
+        </ul>
+
+        <h3><strong>Results &amp; Impact</strong></h3>
+        <ul>
+          <li>Delivered a large content pipeline with <strong>400 levels</strong>, <strong>20 characters</strong>, and <strong>7 hotels</strong>.</li>
+          <li>Optimized resource management to reduce <strong>build size by 30%</strong> and improve <strong>startup speed by 20%</strong>.</li>
+          <li>Improved UI responsiveness and overall game feel, resulting in a <strong>23% increase in user engagement and session duration</strong>.</li>
+        </ul>
+
+        <h3><strong>Tech Stack</strong></h3>
+        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong>, <strong>Zenject</strong>, <strong>UniTask</strong>, <strong>DoTween</strong>, <strong>Firebase</strong>, <strong>BigQuery</strong>, <strong>Custom Editor</strong>, <strong>Xcode</strong>, <strong>Android Studio</strong>, <strong>Memory Management</strong>, <strong>REST API Integration</strong>, <strong>Addressables</strong>, <strong>AppLovin</strong></p>
+
+        <h3><strong>Links</strong></h3>
+        <p class="project-links">
+          <span class="k">Google Play:</span>
+          <a href="https://play.google.com/store/apps/details?id=com.thesimgames.hotellove&hl=en">Love Blast: Block Puzzle</a>
+        </p>
+
+        <h3><strong>Media</strong></h3>
+        <div class="media-grid">
+          <img src="love-blast-01.png" alt="Love Blast screenshot 1" />
+          <img src="love-blast-02.png" alt="Love Blast screenshot 2" />
+          <img src="love-blast-03.png" alt="Love Blast screenshot 3" />
+          <img src="love-blast-04.png" alt="Love Blast screenshot 4" />
+          <img src="love-blast-05.png" alt="Love Blast screenshot 5" />
+          <img src="love-blast-06.png" alt="Love Blast screenshot 6" />
+        </div>
+      </article>
+
+      <article class="project">
+        <h3><strong>Slime Time</strong></h3>
+        <div class="meta">
+          <div class="meta-item"><span class="k">Type:</span> Commercial</div>
+          <div class="meta-item"><span class="k">Role:</span> Gameplay Programmer</div>
+          <div class="meta-item"><span class="k">Timeline:</span> 1 month</div>
+          <div class="meta-item"><span class="k">Team Size:</span> 4 people</div>
+        </div>
+
+        <p><span class="k">Overview:</span> Contributed gameplay features and monetization content for a mobile title.</p>
+
+        <h3><strong>What I Built</strong></h3>
+        <ul>
+          <li>Created several new playable characters.</li>
+          <li>Implemented two paid bundles.</li>
+          <li>Built procedurally generated <strong>endless mode</strong>.</li>
+        </ul>
+
+        <h3><strong>Challenges</strong></h3>
+        <ul>
+          <li>Worked within an existing codebase and maintained quality through regular code review practices.</li>
+        </ul>
+
+        <h3><strong>Results &amp; Impact</strong></h3>
+        <ul>
+          <li>Expanded character roster and purchasable content.</li>
+          <li>Added replayability with procedural endless mode.</li>
+        </ul>
+
+        <h3><strong>Tech Stack</strong></h3>
+        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong>, <strong>Procedural Generation</strong>, <strong>IAP Catalog</strong></p>
+
+        <h3><strong>Links</strong></h3>
+        <p class="project-links">
+          <span class="k">Google Play:</span>
+          <a href="https://play.google.com/store/apps/details?id=com.Funstuff.slimetime&hl=en">Slime Time</a>
+        </p>
+
+        <h3><strong>Media</strong></h3>
+        <div class="media-grid">
+          <img src="slime-time-01.png" alt="Slime Time screenshot 1" />
+          <img src="slime-time-02.png" alt="Slime Time screenshot 2" />
+          <img src="slime-time-03.png" alt="Slime Time screenshot 3" />
+        </div>
+      </article>
+    </section>
+
+    <section class="section" id="jams">
+      <h2><strong>Game Jam Projects</strong></h2>
+
+      <article class="project">
+        <h3><strong>Rogue Scribe (Ludum Dare 58)</strong></h3>
+        <div class="meta">
+          <div class="meta-item"><span class="k">Type:</span> Game Jam</div>
+          <div class="meta-item"><span class="k">Role:</span> Gameplay &amp; Systems Programmer</div>
+          <div class="meta-item"><span class="k">Timeline:</span> 2 days initial build + 2 months further development</div>
+          <div class="meta-item"><span class="k">Team Size:</span> Solo</div>
+        </div>
+
+        <p>
+          <span class="k">Overview:</span> Dynamic action-parkour game made in Unity, focused on modular movement and spell systems.
+        </p>
+
+        <h3><strong>What I Built</strong></h3>
+        <ul>
+          <li>Architected systems with <strong>Zenject DI</strong> and ECS-like design approach.</li>
+          <li>Built modular ability/inventory/AI structures.</li>
+          <li>
+            Created highly composable state and spell systems, enabling rapid creation of movement states
+            (wall run, gravity shift, dash) and spells (geyser, fireball, laser).
+          </li>
+        </ul>
+
+        <h3><strong>Challenges</strong></h3>
+        <ul>
+          <li>Created a state-machine builder system for the main character where gameplay changes significantly depending on which state configurations are passed as input.</li>
+          <li>Built many mechanics in a short jam timeframe by using composable logic blocks for reusable movement and spell behavior.</li>
+          <li>Kept architecture clean under rapid iteration pressure by applying modular boundaries and dependency injection.</li>
+        </ul>
+
+        <h3><strong>Results &amp; Impact</strong></h3>
+        <ul>
+          <li>Jam-ready gameplay with multiple movement and spell combinations.</li>
+          <li>System design supports fast feature extension.</li>
+        </ul>
+
+        <h3><strong>Tech Stack</strong></h3>
+        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong>, <strong>Zenject</strong>, <strong>Performance Profiling</strong>, <strong>Memory Management</strong>, <strong>ProBuilder</strong>, <strong>FMOD</strong></p>
+
+        <h3><strong>Links</strong></h3>
+        <p class="project-links">
+          <span class="k">GitHub:</span>
+          <a href="https://github.com/mirikKun/Mirik_LD58">Mirik_LD58</a><br />
+          <span class="k">itch.io:</span>
+          <a href="https://enryu-mirik.itch.io/rogue-scribe">rogue-scribe</a><br />
+          <span class="k">Ludum Dare:</span>
+          <a href="https://ldjam.com/events/ludum-dare/58/rogue-scribe">LD58 Entry</a>
+        </p>
+
+        <h3><strong>Media</strong></h3>
+        <div class="media-grid two-by-two">
+          <img src="rogue-scribe-01.png" alt="Rogue Scribe screenshot 1" />
+          <img src="rogue-scribe-02.png" alt="Rogue Scribe screenshot 2" />
+          <img src="rogue-scribe-03.png" alt="Rogue Scribe screenshot 3" />
+          <img src="rogue-scribe-04.png" alt="Rogue Scribe screenshot 4" />
+          <img src="rogue-scribe-frame-02.jpg" alt="Rogue Scribe screenshot 5" />
+          <img src="rogue-scribe-gameplay.png" alt="Rogue Scribe screenshot 6" />
+        </div>
+      </article>
+
+      <article class="project">
+        <h3><strong>AbyssLonging (Ludum Dare 57)</strong></h3>
+        <div class="meta">
+          <div class="meta-item"><span class="k">Type:</span> Game Jam</div>
+          <div class="meta-item"><span class="k">Role:</span> Gameplay &amp; Systems Programmer</div>
+          <div class="meta-item"><span class="k">Timeline:</span> 2 days</div>
+          <div class="meta-item"><span class="k">Team Size:</span> Solo</div>
+        </div>
+
+        <p>
+          <span class="k">Overview:</span> Procedurally generated dungeon game where players descend to lower floors using diverse abilities.
+        </p>
+
+        <h3><strong>What I Built</strong></h3>
+        <ul>
+          <li>Created the dungeon generation logic and progression flow for descending through procedurally structured floors.</li>
+          <li>Built a character controller with parkour elements tailored to vertical traversal and this level design style.</li>
+          <li>Designed and assembled ProBuilder levels to create a strong sense of massive megastructure spaces.</li>
+        </ul>
+
+        <h3><strong>Challenges</strong></h3>
+        <ul>
+          <li>This was my first game jam, so the key challenge was delivering the full game in two days from initial concept to final itch.io upload.</li>
+        </ul>
+
+        <h3><strong>Results &amp; Impact</strong></h3>
+        <ul>
+          <li>Completed playable jam entry with generated dungeon gameplay.</li>
+          <li>Reached the <strong>top 10%</strong> of games in that jam on my first attempt.</li>
+        </ul>
+
+        <h3><strong>Tech Stack</strong></h3>
+        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong></p>
+
+        <h3><strong>Links</strong></h3>
+        <p class="project-links">
+          <span class="k">Ludum Dare:</span>
+          <a href="https://ldjam.com/events/ludum-dare/57/abyss-longing">LD57 Entry</a><br />
+          <span class="k">itch.io:</span>
+          <a href="https://enryu-mirik.itch.io/abysslonging">abysslonging</a><br />
+          <span class="k">GIF/Video:</span>
+          <a href="https://drive.google.com/file/d/1YysbwoJz6T9Ihbu2VfCns_gav64-Bjuf/view?usp=sharing">Drive Link</a>
+        </p>
+
+        <h3><strong>Media</strong></h3>
+        <div class="media-grid">
+          <img src="abysslonging-01.png" alt="AbyssLonging screenshot 1" />
+          <img src="abysslonging-02.png" alt="AbyssLonging screenshot 2" />
+        </div>
+      </article>
+
+      <article class="project">
+        <h3><strong>Against the Fog (Nordic Game Jam 2026)</strong></h3>
+        <div class="meta">
+          <div class="meta-item"><span class="k">Type:</span> Game Jam</div>
+          <div class="meta-item"><span class="k">Role:</span> Lead Game Developer</div>
+          <div class="meta-item"><span class="k">Timeline:</span> 2 days</div>
+          <div class="meta-item"><span class="k">Team Size:</span> 5 people</div>
+        </div>
+
+        <p>
+          <span class="k">Overview:</span> Atmospheric survival city builder where players push back fog, manage resources, and build a lighthouse.
+        </p>
+
+        <h3><strong>What I Built</strong></h3>
+        <ul>
+          <li>Drove the project to completion as the lead gameplay programmer in a team of five people I had just met.</li>
+          <li>Created all core gameplay systems and implemented most of the art assets.</li>
+        </ul>
+
+        <h3><strong>Challenges</strong></h3>
+        <ul>
+          <li>Delivered a polished strategic experience in a 48-hour jam scope with lead-level technical ownership.</li>
+        </ul>
+
+        <h3><strong>Results &amp; Impact</strong></h3>
+        <ul>
+          <li>Playable jam build delivered for <strong>Nordic Game Jam 2026</strong>.</li>
+        </ul>
+
+        <h3><strong>Tech Stack</strong></h3>
+        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong></p>
+
+        <h3><strong>Links</strong></h3>
+        <p class="project-links">
+          <span class="k">itch.io:</span>
+          <a href="https://jasperlaureijs.itch.io/against-the-fog">Against the Fog</a>
+        </p>
+
+        <h3><strong>Media</strong></h3>
+        <div class="media-grid">
+          <img src="against-the-fog-01.png" alt="Against the Fog screenshot 1" />
+          <img src="against-the-fog-02.gif" alt="Against the Fog gameplay gif" />
+        </div>
+      </article>
+    </section>
+
+    <section class="section" id="pet">
+      <h2><strong>Pet Projects</strong></h2>
+
+      <article class="project">
+        <h3><strong>Endless Zip</strong></h3>
+        <div class="meta">
+          <div class="meta-item"><span class="k">Type:</span> Pet Project / Test Project</div>
+          <div class="meta-item"><span class="k">Role:</span> Gameplay &amp; Systems Programmer</div>
+          <div class="meta-item"><span class="k">Timeline:</span> 4 days</div>
+          <div class="meta-item"><span class="k">Team Size:</span> Solo</div>
+        </div>
+
+        <p>
+          <span class="k">Overview:</span> Fast-paced Unity test project delivered in 4 days with clean architecture and polished game feel.
+        </p>
+
+        <h3><strong>What I Built</strong></h3>
+        <ul>
+          <li>Core gameplay loop and control flow.</li>
+          <li>Modular systems with maintainable architecture boundaries.</li>
+          <li>Gameplay feedback tuning for responsive feel.</li>
+        </ul>
+
+        <h3><strong>Challenges</strong></h3>
+        <ul>
+          <li>Delivered complete assignment quality in 4 days through strict feature prioritization and modular implementation sequence.</li>
+          <li>Kept clean architecture under time pressure by using consistent system boundaries and reusable components.</li>
+        </ul>
+
+        <h3><strong>Results &amp; Impact</strong></h3>
+        <ul>
+          <li>All test task conditions completed in <strong>4 days</strong>.</li>
+          <li>Project structure is ready for scaling and extension.</li>
+        </ul>
+
+        <h3><strong>Tech Stack</strong></h3>
+        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong>, <strong>Clean Architecture</strong>, <strong>Modular Systems</strong></p>
+
+        <h3><strong>Links</strong></h3>
+        <p class="project-links">
+          <span class="k">GitHub:</span>
+          <a href="https://github.com/mirikKun/ZipTest">ZipTest</a><br />
+          <span class="k">itch.io:</span>
+          <a href="https://enryu-mirik.itch.io/zip">zip</a>
+        </p>
+
+        <h3><strong>Media</strong></h3>
+        <div class="media-grid">
+          <img src="endless-zip-screenshot.png" alt="Endless Zip screenshot" />
+        </div>
+      </article>
+
+      <article class="project">
+        <h3><strong>Skyroads</strong></h3>
+        <div class="meta">
+          <div class="meta-item"><span class="k">Type:</span> Test Project</div>
+          <div class="meta-item"><span class="k">Role:</span> Gameplay &amp; Systems Programmer</div>
+          <div class="meta-item"><span class="k">Timeline:</span> 3 days</div>
+          <div class="meta-item"><span class="k">Team Size:</span> Solo</div>
+        </div>
+
+        <p>
+          <span class="k">Overview:</span> Test project delivered in 3 days with clean architecture and complete task requirements.
+        </p>
+
+        <h3><strong>What I Built</strong></h3>
+        <ul>
+          <li>Implemented required gameplay functionality for test scope.</li>
+          <li>Maintained clean and readable project architecture.</li>
+          <li>Provided project summary via README.</li>
+        </ul>
+
+        <h3><strong>Challenges</strong></h3>
+        <ul>
+          <li>To improve visual quality, I added a road-bending effect. This introduced rendering artifacts, which I fixed by manually increasing the object rendering bounds size.</li>
+        </ul>
+
+        <h3><strong>Results &amp; Impact</strong></h3>
+        <ul>
+          <li>Delivered complete test project in <strong>3 days</strong>.</li>
+        </ul>
+
+        <h3><strong>Tech Stack</strong></h3>
+        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong></p>
+
+        <h3><strong>Links</strong></h3>
+        <p class="project-links">
+          <span class="k">GitHub:</span>
+          <a href="https://github.com/mirikKun/SkyroadsTest">SkyroadsTest</a>
+        </p>
+
+        <h3><strong>Media</strong></h3>
+        <div class="media-grid">
+          <img src="skyroads-screenshot.png" alt="Skyroads screenshot" />
+          <img src="skyroads-screenshot-02.png" alt="Skyroads gameplay screenshot 2" />
+        </div>
+      </article>
+
+    </section>
+
+    <section class="section" id="unavailable">
+      <h2><strong>Commercial Projects (No Longer Available)</strong></h2>
+      <p>
+        These projects were developed commercially but are currently unavailable in stores.
+      </p>
+
+      <article class="project">
+        <h3><strong>Samurai Warlords</strong></h3>
+        <div class="meta">
+          <div class="meta-item"><span class="k">Type:</span> Commercial (Unreleased)</div>
+          <div class="meta-item"><span class="k">Role:</span> Unity Developer</div>
+          <div class="meta-item"><span class="k">Company:</span> Lumighost</div>
+          <div class="meta-item"><span class="k">Timeline:</span> 1.5 years | <span class="k">Team Size:</span> 5 people</div>
+        </div>
+
+        <p>
+          <span class="k">Overview:</span> Chess game with samurai warriors, 3D character customization, and multiplayer-ready gameplay systems.
+        </p>
+        <h3><strong>What I Built</strong></h3>
+        <ul>
+          <li>Replaced classic chess pieces with <strong>3D samurai characters</strong>.</li>
+          <li>Implemented modular <strong>character customization</strong> (skins, weapons, armor) with preview system.</li>
+          <li>Created cutscene and capture effects systems, including synchronized transitions.</li>
+          <li>Built multiplayer client/server features with <strong>Photon</strong>.</li>
+        </ul>
+        <h3><strong>Reason It Is Not Available</strong></h3>
+        <p>
+          The project did not reach release because it was an <strong>NFT project</strong>, and the clients decided to stop development.
+        </p>
+        <h3><strong>Tech Stack</strong></h3>
+        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong>, <strong>Photon</strong></p>
+        <h3><strong>Media</strong></h3>
+        <div class="media-grid two-by-two">
+          <img src="samurai-warlords-01.png" alt="Samurai Warlords screenshot 1" />
+          <img src="samurai-warlords-02.png" alt="Samurai Warlords screenshot 2" />
+          <img src="samurai-warlords-03.png" alt="Samurai Warlords screenshot 3" />
+          <img src="samurai-warlords-04.png" alt="Samurai Warlords screenshot 4" />
+        </div>
+      </article>
+
+      <article class="project">
+        <h3><strong>Brain Bricks</strong></h3>
+        <div class="meta">
+          <div class="meta-item"><span class="k">Type:</span> Commercial (Hidden from Stores)</div>
+          <div class="meta-item"><span class="k">Role:</span> UI Developer</div>
+          <div class="meta-item"><span class="k">Company:</span> BG Games</div>
+          <div class="meta-item"><span class="k">Period:</span> April 2021 - September 2021</div>
+        </div>
+        <p>
+          <span class="k">Overview:</span> 2D casual puzzle game with new mechanics and improved level/content workflows.
+        </p>
+        <h3><strong>What I Built</strong></h3>
+        <ul>
+          <li>Implemented new gameplay mechanics and <strong>UI systems</strong>.</li>
+          <li>Refactored level data from hardcoded structures to <strong>ScriptableObjects</strong>.</li>
+          <li>Built progression and unlock flow with object pooling for smooth lists.</li>
+        </ul>
+        <h3><strong>Reason It Is Not Available</strong></h3>
+        <p>
+          The project became unavailable because it was not updated for a long time, so it was hidden from stores.
+        </p>
+        <h3><strong>Tech Stack</strong></h3>
+        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong>, <strong>ScriptableObjects</strong></p>
+        <h3><strong>Media</strong></h3>
+        <div class="media-grid">
+          <img src="brain-bricks-03.png" alt="Brain Bricks screenshot 1" />
+          <img src="brain-bricks-04.png" alt="Brain Bricks screenshot 2" />
+        </div>
+      </article>
+
+      <article class="project">
+        <h3><strong>Crokobit</strong></h3>
+        <div class="meta">
+          <div class="meta-item"><span class="k">Type:</span> Commercial (Hidden from Stores)</div>
+          <div class="meta-item"><span class="k">Role:</span> Core Systems Developer</div>
+          <div class="meta-item"><span class="k">Company:</span> BG Games</div>
+          <div class="meta-item"><span class="k">Timeline:</span> 5 months | <span class="k">Team Size:</span> 8 people</div>
+        </div>
+        <p>
+          <span class="k">Overview:</span> Commercial mobile game listed in CV as released project; core systems were part of my contribution area.
+        </p>
+        <h3><strong>What I Built</strong></h3>
+        <ul>
+          <li>Built core progression systems: building/location upgrades with offline progress and parameterized level formulas.</li>
+          <li>Implemented boss AI with a custom multi-phase state machine and a flexible projectile combat system.</li>
+          <li>Developed balance/content tooling with ScriptableObject configs and CSV import for fast iteration.</li>
+        </ul>
+        <h3><strong>Results &amp; Impact</strong></h3>
+        <ul>
+          <li>Improved mass-combat performance by <strong>40%</strong> using object pooling with warm-up.</li>
+          <li>Reduced memory usage by <strong>60%</strong> with Addressables + additive loading while maintaining <strong>60 FPS</strong> on low-end Android devices.</li>
+          <li>Increased player retention by <strong>25%</strong> through accurate offline progress and idle mechanics.</li>
+        </ul>
+        <h3><strong>Reason It Is Not Available</strong></h3>
+        <p>
+          The project became unavailable because it was not updated for a long time, so it was hidden from stores.
+        </p>
+        <h3><strong>Tech Stack</strong></h3>
+        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong>, <strong>ScriptableObjects</strong>, <strong>Factory Pattern</strong>, <strong>State Machine</strong>, <strong>Object Pooling</strong>, <strong>Addressables</strong>, <strong>CSV Pipeline</strong></p>
+        <h3><strong>Media</strong></h3>
+        <div class="media-grid">
+          <img src="crokobit-01.png" alt="Crokobit screenshot 1" />
+          <img src="crokobit-02.png" alt="Crokobit screenshot 2" />
+          <img src="crokobit-03.png" alt="Crokobit screenshot 3" />
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
