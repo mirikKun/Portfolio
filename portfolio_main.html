@@ -145,6 +145,52 @@
       font-weight: 700;
     }
 
+    .project-highlight {
+      border: 2px solid var(--accent);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin: 4px 0 18px;
+      background: rgba(26, 40, 66, 0.45);
+    }
+
+    .project-highlight-label {
+      margin: 0 0 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .project-highlight p {
+      margin: 0 0 10px;
+    }
+
+    .project-highlight p:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-highlight ul {
+      margin: 8px 0 0;
+      padding-left: 18px;
+    }
+
+    .project-highlight ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-highlight--empty {
+      min-height: 88px;
+    }
+
+    .project-highlight-placeholder {
+      margin: 0;
+      min-height: 3.25rem;
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      background: rgba(12, 17, 27, 0.4);
+    }
+
     .todo {
       display: inline-block;
       background: var(--todo-bg);
@@ -244,6 +290,21 @@
           <li>Created custom <strong>Unity Editor tools</strong> for technical artists and level designers: level editor with visual validation, automated asset validators, and content pipeline automation.</li>
         </ul>
 
+        <div class="project-highlight" role="region" aria-label="Love Blast project highlight">
+          <p class="project-highlight-label">Project highlight</p>
+          <ul>
+            <li>
+              Built and maintained <strong>clean code</strong> with a <strong>full MVC-style separation</strong>, a <strong>clear entry point</strong>, and a structured <strong>initialization flow</strong> so gameplay, UI, and data stayed decoupled as scope grew.
+            </li>
+            <li>
+              Separated responsibilities into <strong>dedicated services and systems</strong> (purchases, ads, timers, progression, resources, and related live-ops areas) and composed them through <strong>Zenject (DI)</strong> for predictable lifetimes and easier testing.
+            </li>
+            <li>
+              Ran <strong>weekly code reviews</strong> and <strong>infrastructure planning sessions</strong> to evolve patterns, reduce coupling, and scale the project without turning the codebase into a bottleneck.
+            </li>
+          </ul>
+        </div>
+
         <h3><strong>Challenges</strong></h3>
         <ul>
           <li>The game went through several major redesign phases, and due to flexible architecture these changes were implemented quickly with minimal bugs.</li>
@@ -293,6 +354,18 @@
           <li>Implemented two paid bundles.</li>
           <li>Built procedurally generated <strong>endless mode</strong>.</li>
         </ul>
+
+        <div class="project-highlight" role="region" aria-label="Slime Time project highlight">
+          <p class="project-highlight-label">Project highlight</p>
+          <ul>
+            <li>
+              Joined a <strong>mostly complete production codebase</strong> and delivered new features while matching the team’s <strong>existing engineering style and conventions</strong>.
+            </li>
+            <li>
+              Refactored level creation around an <strong>abstract factory</strong> and <strong>object pooling</strong>, improving average <strong>frame rate by ~10%</strong> and making the pipeline cleaner for <strong>procedural endless mode</strong> work.
+            </li>
+          </ul>
+        </div>
 
         <h3><strong>Challenges</strong></h3>
         <ul>
@@ -349,6 +422,21 @@
           </li>
         </ul>
 
+        <div class="project-highlight" role="region" aria-label="Rogue Scribe project highlight">
+          <p class="project-highlight-label">Project highlight</p>
+          <ul>
+            <li>
+              Implemented a <strong>Zenject-backed infrastructure state machine</strong> for the whole game: <strong>typed lifecycle states</strong>, <strong>payload-driven transitions</strong>, and routing <strong>Update / FixedUpdate / LateUpdate</strong> into whichever state is active.
+            </li>
+            <li>
+              Built a <strong>graph-based gameplay state machine</strong> with <strong>conditional</strong> and <strong>catch-all (“any”)</strong> edges, <strong>state history</strong>, and <strong>multi-instance support</strong> (same state type, different index). A <strong>factory</strong> assembles machines from a flat list of <strong>StateConfiguration</strong> entries.
+            </li>
+            <li>
+              Composed the <strong>player controller</strong> from the same core using <strong>ScriptableObject</strong> movement configs (<strong>BaseMoveStateConfig</strong>): each asset adds its own states plus a <strong>transition table</strong>, so a new mechanic set is mostly <strong>new configs</strong>, not a rewrite of the engine.
+            </li>
+          </ul>
+        </div>
+
         <h3><strong>Challenges</strong></h3>
         <ul>
           <li>Created a state-machine builder system for the main character where gameplay changes significantly depending on which state configurations are passed as input.</li>
@@ -387,57 +475,6 @@
       </article>
 
       <article class="project">
-        <h3><strong>AbyssLonging (Ludum Dare 57)</strong></h3>
-        <div class="meta">
-          <div class="meta-item"><span class="k">Type:</span> Game Jam</div>
-          <div class="meta-item"><span class="k">Role:</span> Gameplay &amp; Systems Programmer</div>
-          <div class="meta-item"><span class="k">Timeline:</span> 2 days</div>
-          <div class="meta-item"><span class="k">Team Size:</span> Solo</div>
-        </div>
-
-        <p>
-          <span class="k">Overview:</span> Procedurally generated dungeon game where players descend to lower floors using diverse abilities.
-        </p>
-
-        <h3><strong>What I Built</strong></h3>
-        <ul>
-          <li>Created the dungeon generation logic and progression flow for descending through procedurally structured floors.</li>
-          <li>Built a character controller with parkour elements tailored to vertical traversal and this level design style.</li>
-          <li>Designed and assembled ProBuilder levels to create a strong sense of massive megastructure spaces.</li>
-        </ul>
-
-        <h3><strong>Challenges</strong></h3>
-        <ul>
-          <li>This was my first game jam, so the key challenge was delivering the full game in two days from initial concept to final itch.io upload.</li>
-        </ul>
-
-        <h3><strong>Results &amp; Impact</strong></h3>
-        <ul>
-          <li>Completed playable jam entry with generated dungeon gameplay.</li>
-          <li>Reached the <strong>top 10%</strong> of games in that jam on my first attempt.</li>
-        </ul>
-
-        <h3><strong>Tech Stack</strong></h3>
-        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong></p>
-
-        <h3><strong>Links</strong></h3>
-        <p class="project-links">
-          <span class="k">Ludum Dare:</span>
-          <a href="https://ldjam.com/events/ludum-dare/57/abyss-longing">LD57 Entry</a><br />
-          <span class="k">itch.io:</span>
-          <a href="https://enryu-mirik.itch.io/abysslonging">abysslonging</a><br />
-          <span class="k">GIF/Video:</span>
-          <a href="https://drive.google.com/file/d/1YysbwoJz6T9Ihbu2VfCns_gav64-Bjuf/view?usp=sharing">Drive Link</a>
-        </p>
-
-        <h3><strong>Media</strong></h3>
-        <div class="media-grid">
-          <img src="abysslonging-01.png" alt="AbyssLonging screenshot 1" />
-          <img src="abysslonging-02.png" alt="AbyssLonging screenshot 2" />
-        </div>
-      </article>
-
-      <article class="project">
         <h3><strong>Against the Fog (Nordic Game Jam 2026)</strong></h3>
         <div class="meta">
           <div class="meta-item"><span class="k">Type:</span> Game Jam</div>
@@ -455,6 +492,13 @@
           <li>Drove the project to completion as the lead gameplay programmer in a team of five people I had just met.</li>
           <li>Created all core gameplay systems and implemented most of the art assets.</li>
         </ul>
+
+        <div class="project-highlight" role="region" aria-label="Against the Fog project highlight">
+          <p class="project-highlight-label">Project highlight</p>
+          <p>
+            My <strong>first in-person jam</strong> (not online-only): led a <strong>team of five people I met for the first time</strong> and we still shipped a cohesive build—<strong>no integration blockers</strong>—within about <strong>a day and a half</strong> of focused production time.
+          </p>
+        </div>
 
         <h3><strong>Challenges</strong></h3>
         <ul>
@@ -502,6 +546,21 @@
           <li>Owned a large share of <strong>environment work</strong> plus <strong>post-processing</strong> and <strong>lighting</strong> to sell atmosphere and readability.</li>
         </ul>
 
+        <div class="project-highlight" role="region" aria-label="Beacon Bound project highlight">
+          <p class="project-highlight-label">Project highlight</p>
+          <ul>
+            <li>
+              Heavy focus on <strong>lighting and mood</strong>: authored a <strong>custom beacon shader</strong> that reads like a <strong>volumetric spotlight</strong> driving the focal beam.
+            </li>
+            <li>
+              Added a <strong>depth-based fog shader</strong> that fades scene detail using the depth buffer for a soft, readable horizon.
+            </li>
+            <li>
+              Tuned <strong>post-processing</strong>—contrast and <strong>color grading</strong>—to lock the cold coastal palette and sell the “lost in the mist” atmosphere.
+            </li>
+          </ul>
+        </div>
+
         <h3><strong>Challenges</strong></h3>
         <ul>
           <li>As a solo <strong>48-hour</strong> scope, balancing readable beacon-driven direction, generation and route logic, and polished environmental presentation required tight prioritization and fast iteration.</li>
@@ -513,7 +572,7 @@
         </ul>
 
         <h3><strong>Tech Stack</strong></h3>
-        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong>, <strong>Procedural Generation</strong>, <strong>Post-Processing</strong>, <strong>Lighting &amp; Atmosphere</strong></p>
+        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong>, <strong>Procedural Generation</strong>, <strong>Custom Shaders</strong>, <strong>Post-Processing</strong>, <strong>Lighting &amp; Atmosphere</strong></p>
 
         <h3><strong>Links</strong></h3>
         <p class="project-links">
@@ -526,11 +585,74 @@
         </p>
 
         <h3><strong>Media</strong></h3>
-        <div class="media-grid">
+        <div class="media-grid two-by-two">
           <img src="beacon-bound-01.png" alt="Beacon Bound screenshot 1" />
           <img src="beacon-bound-02.png" alt="Beacon Bound screenshot 2" />
           <img src="beacon-bound-03.gif" alt="Beacon Bound gameplay gif 1" />
           <img src="beacon-bound-04.gif" alt="Beacon Bound gameplay gif 2" />
+        </div>
+      </article>
+
+      <article class="project">
+        <h3><strong>AbyssLonging (Ludum Dare 57)</strong></h3>
+        <div class="meta">
+          <div class="meta-item"><span class="k">Type:</span> Game Jam</div>
+          <div class="meta-item"><span class="k">Role:</span> Gameplay &amp; Systems Programmer</div>
+          <div class="meta-item"><span class="k">Timeline:</span> 2 days</div>
+          <div class="meta-item"><span class="k">Team Size:</span> Solo</div>
+        </div>
+
+        <p>
+          <span class="k">Overview:</span> Procedurally generated dungeon game where players descend to lower floors using diverse abilities.
+        </p>
+
+        <h3><strong>What I Built</strong></h3>
+        <ul>
+          <li>Created the dungeon generation logic and progression flow for descending through procedurally structured floors.</li>
+          <li>Built a character controller with parkour elements tailored to vertical traversal and this level design style.</li>
+          <li>Designed and assembled ProBuilder levels to create a strong sense of massive megastructure spaces.</li>
+        </ul>
+
+        <div class="project-highlight" role="region" aria-label="AbyssLonging project highlight">
+          <p class="project-highlight-label">Project highlight</p>
+          <ul>
+            <li>
+              Used <strong>ProBuilder</strong> to rapidly prototype <strong>10 playable levels</strong> shaped around the player’s <strong>movement abilities</strong> and traversal constraints.
+            </li>
+            <li>
+              Split content into <strong>simple</strong> and <strong>hard</strong> tiers; as difficulty ramps, the generator <strong>randomly selects</strong> the next authored stage from the pool that matches the <strong>current difficulty band</strong>.
+            </li>
+          </ul>
+        </div>
+
+        <h3><strong>Challenges</strong></h3>
+        <ul>
+          <li>This was my first game jam, so the key challenge was delivering the full game in two days from initial concept to final itch.io upload.</li>
+        </ul>
+
+        <h3><strong>Results &amp; Impact</strong></h3>
+        <ul>
+          <li>Completed playable jam entry with generated dungeon gameplay.</li>
+          <li>Reached the <strong>top 10%</strong> of games in that jam on my first attempt.</li>
+        </ul>
+
+        <h3><strong>Tech Stack</strong></h3>
+        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong>, <strong>ProBuilder</strong></p>
+
+        <h3><strong>Links</strong></h3>
+        <p class="project-links">
+          <span class="k">Ludum Dare:</span>
+          <a href="https://ldjam.com/events/ludum-dare/57/abyss-longing">LD57 Entry</a><br />
+          <span class="k">itch.io:</span>
+          <a href="https://enryu-mirik.itch.io/abysslonging">abysslonging</a><br />
+          <span class="k">GIF/Video:</span>
+          <a href="https://drive.google.com/file/d/1YysbwoJz6T9Ihbu2VfCns_gav64-Bjuf/view?usp=sharing">Drive Link</a>
+        </p>
+
+        <h3><strong>Media</strong></h3>
+        <div class="media-grid">
+          <img src="abysslonging-01.png" alt="AbyssLonging screenshot 1" />
+          <img src="abysslonging-02.png" alt="AbyssLonging screenshot 2" />
         </div>
       </article>
     </section>
@@ -558,6 +680,18 @@
           <li>Gameplay feedback tuning for responsive feel.</li>
         </ul>
 
+        <div class="project-highlight" role="region" aria-label="Endless Zip project highlight">
+          <p class="project-highlight-label">Project highlight</p>
+          <ul>
+            <li>
+              Built an <strong>animation choreography layer on UniTask</strong> that composes reusable tweens—<strong>bounce</strong>, <strong>appear/disappear</strong>, <strong>fade</strong>, <strong>move</strong>—as awaitable building blocks instead of one-off coroutine spaghetti.
+            </li>
+            <li>
+              Used it heavily on the <strong>win screen</strong> to script <strong>parallel and sequential beats</strong> (panel reveal, every button, particles) with a full intro cycle while staying <strong>data-driven</strong> and avoiding brittle hard-coded timelines.
+            </li>
+          </ul>
+        </div>
+
         <h3><strong>Challenges</strong></h3>
         <ul>
           <li>Delivered complete assignment quality in 4 days through strict feature prioritization and modular implementation sequence.</li>
@@ -571,7 +705,7 @@
         </ul>
 
         <h3><strong>Tech Stack</strong></h3>
-        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong>, <strong>Clean Architecture</strong>, <strong>Modular Systems</strong></p>
+        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong>, <strong>UniTask</strong>, <strong>Clean Architecture</strong>, <strong>Modular Systems</strong></p>
 
         <h3><strong>Links</strong></h3>
         <p class="project-links">
@@ -607,6 +741,18 @@
           <li>Provided project summary via README.</li>
         </ul>
 
+        <div class="project-highlight" role="region" aria-label="Skyroads project highlight">
+          <p class="project-highlight-label">Project highlight</p>
+          <ul>
+            <li>
+              Drove the entire loop through a <strong>single global state machine</strong> with <strong>one tick path</strong>, so every frame is <strong>fully ordered</strong> and easy to reason about when debugging gameplay flow.
+            </li>
+            <li>
+              Wired the machine through a <strong>custom service locator</strong> instead of a heavy DI framework—deliberately lightweight, but still demonstrating I can stand up a <strong>small composition root quickly</strong> when the brief calls for it.
+            </li>
+          </ul>
+        </div>
+
         <h3><strong>Challenges</strong></h3>
         <ul>
           <li>To improve visual quality, I added a road-bending effect. This introduced rendering artifacts, which I fixed by manually increasing the object rendering bounds size.</li>
@@ -618,7 +764,7 @@
         </ul>
 
         <h3><strong>Tech Stack</strong></h3>
-        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong></p>
+        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong>, <strong>State Machine</strong>, <strong>Service Locator</strong></p>
 
         <h3><strong>Links</strong></h3>
         <p class="project-links">
@@ -660,12 +806,25 @@
           <li>Created cutscene and capture effects systems, including synchronized transitions.</li>
           <li>Built multiplayer client/server features with <strong>Photon</strong>.</li>
         </ul>
+
+        <div class="project-highlight" role="region" aria-label="Samurai Warlords project highlight">
+          <p class="project-highlight-label">Project highlight</p>
+          <ul>
+            <li>
+              Built a <strong>cutscene stack</strong> that combined <strong>Timelines</strong>, <strong>Cinemachine</strong>, and <strong>splines</strong> to choreograph camera moves and hit dramatic angles during captures and story beats.
+            </li>
+            <li>
+              For combat presentation, layered a <strong>third-party mesh-cutting solution</strong> with <strong>blood particle effects</strong> and <strong>decals</strong> so heavy hits read visceral without ballooning animation cost.
+            </li>
+          </ul>
+        </div>
+
         <h3><strong>Reason It Is Not Available</strong></h3>
         <p>
           The project did not reach release because it was an <strong>NFT project</strong>, and the clients decided to stop development.
         </p>
         <h3><strong>Tech Stack</strong></h3>
-        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong>, <strong>Photon</strong></p>
+        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong>, <strong>Photon</strong>, <strong>Timeline</strong>, <strong>Cinemachine</strong>, <strong>Splines</strong></p>
         <h3><strong>Media</strong></h3>
         <div class="media-grid two-by-two">
           <img src="samurai-warlords-01.png" alt="Samurai Warlords screenshot 1" />
@@ -683,6 +842,7 @@
           <div class="meta-item"><span class="k">Company:</span> BG Games</div>
           <div class="meta-item"><span class="k">Period:</span> April 2021 - September 2021</div>
         </div>
+
         <p>
           <span class="k">Overview:</span> 2D casual puzzle game with new mechanics and improved level/content workflows.
         </p>
@@ -692,12 +852,20 @@
           <li>Refactored level data from hardcoded structures to <strong>ScriptableObjects</strong>.</li>
           <li>Built progression and unlock flow with object pooling for smooth lists.</li>
         </ul>
+
+        <div class="project-highlight" role="region" aria-label="Brain Bricks project highlight">
+          <p class="project-highlight-label">Project highlight</p>
+          <p>
+            Migrated the entire <strong>playfield</strong> from <strong>Canvas</strong> space into <strong>world coordinates</strong> with <strong>SpriteRenderer</strong>-driven pieces so VFX, animation, and batching stayed cheaper to author—lifting average <strong>frame rate by ~15%</strong> while simplifying future content work.
+          </p>
+        </div>
+
         <h3><strong>Reason It Is Not Available</strong></h3>
         <p>
           The project became unavailable because it was not updated for a long time, so it was hidden from stores.
         </p>
         <h3><strong>Tech Stack</strong></h3>
-        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong>, <strong>ScriptableObjects</strong></p>
+        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong>, <strong>ScriptableObjects</strong>, <strong>SpriteRenderer</strong>, <strong>World-Space Gameplay</strong></p>
         <h3><strong>Media</strong></h3>
         <div class="media-grid">
           <img src="brain-bricks-03.png" alt="Brain Bricks screenshot 1" />
@@ -713,6 +881,7 @@
           <div class="meta-item"><span class="k">Company:</span> BG Games</div>
           <div class="meta-item"><span class="k">Timeline:</span> 5 months | <span class="k">Team Size:</span> 8 people</div>
         </div>
+
         <p>
           <span class="k">Overview:</span> Commercial mobile game listed in CV as released project; core systems were part of my contribution area.
         </p>
@@ -722,6 +891,19 @@
           <li>Implemented boss AI with a custom multi-phase state machine and a flexible projectile combat system.</li>
           <li>Developed balance/content tooling with ScriptableObject configs and CSV import for fast iteration.</li>
         </ul>
+
+        <div class="project-highlight" role="region" aria-label="Crokobit project highlight">
+          <p class="project-highlight-label">Project highlight</p>
+          <ul>
+            <li>
+              Treated each <strong>city as its own scene</strong>, <strong>loaded asynchronously through Addressables</strong> when the player travels the world map; <strong>location upgrades</strong> swapped scenes by <strong>unloading the old instance</strong> and <strong>streaming in the upgraded layout</strong>.
+            </li>
+            <li>
+              Kept <strong>enemies and buildings simulating</strong> across those transitions because their <strong>business rules stayed decoupled from the view layer</strong>, so gameplay state did not reset when visuals rehydrated.
+            </li>
+          </ul>
+        </div>
+
         <h3><strong>Results &amp; Impact</strong></h3>
         <ul>
           <li>Improved mass-combat performance by <strong>40%</strong> using object pooling with warm-up.</li>
