@@ -37,8 +37,8 @@
       padding: 28px 20px 56px;
     }
 
-    #commercial { order: 1; }
-    #jams { order: 2; }
+    #jams { order: 1; }
+    #commercial { order: 2; }
     #unavailable { order: 3; }
     #pet { order: 4; }
 
@@ -257,144 +257,12 @@
     <nav class="toc" aria-label="Table of Contents">
       <h2><strong>Table of Contents</strong></h2>
       <ul>
-        <li><a href="#commercial"><strong>Commercial Projects</strong></a></li>
         <li><a href="#jams"><strong>Game Jam Projects</strong></a></li>
+        <li><a href="#commercial"><strong>Commercial Projects</strong></a></li>
         <li><a href="#unavailable"><strong>Commercial Projects (No Longer Available)</strong></a></li>
         <li><a href="#pet"><strong>Pet Projects</strong></a></li>
       </ul>
     </nav>
-
-    <section class="section" id="commercial">
-      <h2><strong>Commercial Projects</strong></h2>
-
-      <article class="project">
-        <h3><strong>Love Blast: Block Puzzle</strong></h3>
-        <div class="meta">
-          <div class="meta-item"><span class="k">Type:</span> Commercial</div>
-          <div class="meta-item"><span class="k">Role:</span> Gameplay &amp; Systems Programmer</div>
-          <div class="meta-item"><span class="k">Timeline:</span> 1 year</div>
-          <div class="meta-item"><span class="k">Developers:</span> 3</div>
-          <div class="meta-item"><span class="k">Total Team Size:</span> 11 (dev + art + design + QA)</div>
-        </div>
-
-        <p><span class="k">Overview:</span> Implemented and expanded puzzle gameplay features for a released mobile title.</p>
-
-        <h3><strong>What I Built</strong></h3>
-        <ul>
-          <li>Implemented core <strong>Block Blast-style gameplay</strong> with figure spawn logic, VFX, combo systems, and polished game feel.</li>
-          <li>Built a <strong>player retention system</strong> with continuous difficulty balancing and controlled figure drop behavior.</li>
-          <li>Built <strong>chat UI</strong> with Telegram-like animations and notifications, and added an <strong>Instagram-like gallery</strong> with custom animations.</li>
-          <li>Built <strong>REST API analytics integration</strong> and automated data pipeline streaming to BigQuery, generating retention/engagement reports and telemetry hooks that track player actions.</li>
-          <li>Built a <strong>400-level progression system</strong> and created a Google Sheets pipeline where designers fill level data that is automatically imported into the game, including CSV import tools for rapid balance iteration.</li>
-          <li>Implemented a <strong>full tutorial system</strong>.</li>
-          <li>Created custom <strong>Unity Editor tools</strong> for technical artists and level designers: level editor with visual validation, automated asset validators, and content pipeline automation.</li>
-        </ul>
-
-        <div class="project-highlight" role="region" aria-label="Love Blast project highlight">
-          <p class="project-highlight-label">Project highlight</p>
-          <ul>
-            <li>
-              Built and maintained <strong>clean code</strong> with a <strong>full MVC-style separation</strong>, a <strong>clear entry point</strong>, and a structured <strong>initialization flow</strong> so gameplay, UI, and data stayed decoupled as scope grew.
-            </li>
-            <li>
-              Separated responsibilities into <strong>dedicated services and systems</strong> (purchases, ads, timers, progression, resources, and related live-ops areas) and composed them through <strong>Zenject (DI)</strong> for predictable lifetimes and easier testing.
-            </li>
-            <li>
-              Ran <strong>weekly code reviews</strong> and <strong>infrastructure planning sessions</strong> to evolve patterns, reduce coupling, and scale the project without turning the codebase into a bottleneck.
-            </li>
-          </ul>
-        </div>
-
-        <h3><strong>Challenges</strong></h3>
-        <ul>
-          <li>The game went through several major redesign phases, and due to flexible architecture these changes were implemented quickly with minimal bugs.</li>
-        </ul>
-
-        <h3><strong>Results &amp; Impact</strong></h3>
-        <ul>
-          <li>Delivered a large content pipeline with <strong>400 levels</strong>, <strong>20 characters</strong>, and <strong>7 hotels</strong>.</li>
-          <li>Optimized resource management to reduce <strong>build size by 30%</strong> and improve <strong>startup speed by 20%</strong>.</li>
-          <li>Improved UI responsiveness and overall game feel, resulting in a <strong>23% increase in user engagement and session duration</strong>.</li>
-        </ul>
-
-        <h3><strong>Tech Stack</strong></h3>
-        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong>, <strong>Zenject</strong>, <strong>UniTask</strong>, <strong>DoTween</strong>, <strong>Firebase</strong>, <strong>BigQuery</strong>, <strong>Custom Editor</strong>, <strong>Xcode</strong>, <strong>Android Studio</strong>, <strong>Memory Management</strong>, <strong>REST API Integration</strong>, <strong>Addressables</strong>, <strong>AppLovin</strong></p>
-
-        <h3><strong>Links</strong></h3>
-        <p class="project-links">
-          <span class="k">Google Play:</span>
-          <a href="https://play.google.com/store/apps/details?id=com.thesimgames.hotellove&hl=en">Love Blast: Block Puzzle</a>
-        </p>
-
-        <h3><strong>Media</strong></h3>
-        <div class="media-grid">
-          <img src="love-blast-01.png" alt="Love Blast screenshot 1" />
-          <img src="love-blast-02.png" alt="Love Blast screenshot 2" />
-          <img src="love-blast-03.png" alt="Love Blast screenshot 3" />
-          <img src="love-blast-04.png" alt="Love Blast screenshot 4" />
-          <img src="love-blast-05.png" alt="Love Blast screenshot 5" />
-          <img src="love-blast-06.png" alt="Love Blast screenshot 6" />
-        </div>
-      </article>
-
-      <article class="project">
-        <h3><strong>Slime Time</strong></h3>
-        <div class="meta">
-          <div class="meta-item"><span class="k">Type:</span> Commercial</div>
-          <div class="meta-item"><span class="k">Role:</span> Gameplay Programmer</div>
-          <div class="meta-item"><span class="k">Timeline:</span> 1 month</div>
-          <div class="meta-item"><span class="k">Team Size:</span> 4 people</div>
-        </div>
-
-        <p><span class="k">Overview:</span> Contributed gameplay features and monetization content for a mobile title.</p>
-
-        <h3><strong>What I Built</strong></h3>
-        <ul>
-          <li>Created several new playable characters.</li>
-          <li>Implemented two paid bundles.</li>
-          <li>Built procedurally generated <strong>endless mode</strong>.</li>
-        </ul>
-
-        <div class="project-highlight" role="region" aria-label="Slime Time project highlight">
-          <p class="project-highlight-label">Project highlight</p>
-          <ul>
-            <li>
-              Joined a <strong>mostly complete production codebase</strong> and delivered new features while matching the team’s <strong>existing engineering style and conventions</strong>.
-            </li>
-            <li>
-              Refactored level creation around an <strong>abstract factory</strong> and <strong>object pooling</strong>, improving average <strong>frame rate by ~10%</strong> and making the pipeline cleaner for <strong>procedural endless mode</strong> work.
-            </li>
-          </ul>
-        </div>
-
-        <h3><strong>Challenges</strong></h3>
-        <ul>
-          <li>Worked within an existing codebase and maintained quality through regular code review practices.</li>
-        </ul>
-
-        <h3><strong>Results &amp; Impact</strong></h3>
-        <ul>
-          <li>Expanded character roster and purchasable content.</li>
-          <li>Added replayability with procedural endless mode.</li>
-        </ul>
-
-        <h3><strong>Tech Stack</strong></h3>
-        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong>, <strong>Procedural Generation</strong>, <strong>IAP Catalog</strong></p>
-
-        <h3><strong>Links</strong></h3>
-        <p class="project-links">
-          <span class="k">Google Play:</span>
-          <a href="https://play.google.com/store/apps/details?id=com.Funstuff.slimetime&hl=en">Slime Time</a>
-        </p>
-
-        <h3><strong>Media</strong></h3>
-        <div class="media-grid">
-          <img src="slime-time-01.png" alt="Slime Time screenshot 1" />
-          <img src="slime-time-02.png" alt="Slime Time screenshot 2" />
-          <img src="slime-time-03.png" alt="Slime Time screenshot 3" />
-        </div>
-      </article>
-    </section>
 
     <section class="section" id="jams">
       <h2><strong>Game Jam Projects</strong></h2>
@@ -653,6 +521,138 @@
         <div class="media-grid">
           <img src="abysslonging-01.png" alt="AbyssLonging screenshot 1" />
           <img src="abysslonging-02.png" alt="AbyssLonging screenshot 2" />
+        </div>
+      </article>
+    </section>
+
+    <section class="section" id="commercial">
+      <h2><strong>Commercial Projects</strong></h2>
+
+      <article class="project">
+        <h3><strong>Love Blast: Block Puzzle</strong></h3>
+        <div class="meta">
+          <div class="meta-item"><span class="k">Type:</span> Commercial</div>
+          <div class="meta-item"><span class="k">Role:</span> Gameplay &amp; Systems Programmer</div>
+          <div class="meta-item"><span class="k">Timeline:</span> 1 year</div>
+          <div class="meta-item"><span class="k">Developers:</span> 3</div>
+          <div class="meta-item"><span class="k">Total Team Size:</span> 11 (dev + art + design + QA)</div>
+        </div>
+
+        <p><span class="k">Overview:</span> Implemented and expanded puzzle gameplay features for a released mobile title.</p>
+
+        <h3><strong>What I Built</strong></h3>
+        <ul>
+          <li>Implemented core <strong>Block Blast-style gameplay</strong> with figure spawn logic, VFX, combo systems, and polished game feel.</li>
+          <li>Built a <strong>player retention system</strong> with continuous difficulty balancing and controlled figure drop behavior.</li>
+          <li>Built <strong>chat UI</strong> with Telegram-like animations and notifications, and added an <strong>Instagram-like gallery</strong> with custom animations.</li>
+          <li>Built <strong>REST API analytics integration</strong> and automated data pipeline streaming to BigQuery, generating retention/engagement reports and telemetry hooks that track player actions.</li>
+          <li>Built a <strong>400-level progression system</strong> and created a Google Sheets pipeline where designers fill level data that is automatically imported into the game, including CSV import tools for rapid balance iteration.</li>
+          <li>Implemented a <strong>full tutorial system</strong>.</li>
+          <li>Created custom <strong>Unity Editor tools</strong> for technical artists and level designers: level editor with visual validation, automated asset validators, and content pipeline automation.</li>
+        </ul>
+
+        <div class="project-highlight" role="region" aria-label="Love Blast project highlight">
+          <p class="project-highlight-label">Project highlight</p>
+          <ul>
+            <li>
+              Built and maintained <strong>clean code</strong> with a <strong>full MVC-style separation</strong>, a <strong>clear entry point</strong>, and a structured <strong>initialization flow</strong> so gameplay, UI, and data stayed decoupled as scope grew.
+            </li>
+            <li>
+              Separated responsibilities into <strong>dedicated services and systems</strong> (purchases, ads, timers, progression, resources, and related live-ops areas) and composed them through <strong>Zenject (DI)</strong> for predictable lifetimes and easier testing.
+            </li>
+            <li>
+              Ran <strong>weekly code reviews</strong> and <strong>infrastructure planning sessions</strong> to evolve patterns, reduce coupling, and scale the project without turning the codebase into a bottleneck.
+            </li>
+          </ul>
+        </div>
+
+        <h3><strong>Challenges</strong></h3>
+        <ul>
+          <li>The game went through several major redesign phases, and due to flexible architecture these changes were implemented quickly with minimal bugs.</li>
+        </ul>
+
+        <h3><strong>Results &amp; Impact</strong></h3>
+        <ul>
+          <li>Delivered a large content pipeline with <strong>400 levels</strong>, <strong>20 characters</strong>, and <strong>7 hotels</strong>.</li>
+          <li>Optimized resource management to reduce <strong>build size by 30%</strong> and improve <strong>startup speed by 20%</strong>.</li>
+          <li>Improved UI responsiveness and overall game feel, resulting in a <strong>23% increase in user engagement and session duration</strong>.</li>
+        </ul>
+
+        <h3><strong>Tech Stack</strong></h3>
+        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong>, <strong>Zenject</strong>, <strong>UniTask</strong>, <strong>DoTween</strong>, <strong>Firebase</strong>, <strong>BigQuery</strong>, <strong>Custom Editor</strong>, <strong>Xcode</strong>, <strong>Android Studio</strong>, <strong>Memory Management</strong>, <strong>REST API Integration</strong>, <strong>Addressables</strong>, <strong>AppLovin</strong></p>
+
+        <h3><strong>Links</strong></h3>
+        <p class="project-links">
+          <span class="k">Google Play:</span>
+          <a href="https://play.google.com/store/apps/details?id=com.thesimgames.hotellove&hl=en">Love Blast: Block Puzzle</a>
+        </p>
+
+        <h3><strong>Media</strong></h3>
+        <div class="media-grid">
+          <img src="love-blast-01.png" alt="Love Blast screenshot 1" />
+          <img src="love-blast-02.png" alt="Love Blast screenshot 2" />
+          <img src="love-blast-03.png" alt="Love Blast screenshot 3" />
+          <img src="love-blast-04.png" alt="Love Blast screenshot 4" />
+          <img src="love-blast-05.png" alt="Love Blast screenshot 5" />
+          <img src="love-blast-06.png" alt="Love Blast screenshot 6" />
+        </div>
+      </article>
+
+      <article class="project">
+        <h3><strong>Slime Time</strong></h3>
+        <div class="meta">
+          <div class="meta-item"><span class="k">Type:</span> Commercial</div>
+          <div class="meta-item"><span class="k">Role:</span> Gameplay Programmer</div>
+          <div class="meta-item"><span class="k">Timeline:</span> 1 month</div>
+          <div class="meta-item"><span class="k">Team Size:</span> 4 people</div>
+        </div>
+
+        <p><span class="k">Overview:</span> Contributed gameplay features and monetization content for a mobile title.</p>
+
+        <h3><strong>What I Built</strong></h3>
+        <ul>
+          <li>Created several new playable characters.</li>
+          <li>Implemented two paid bundles.</li>
+          <li>Built procedurally generated <strong>endless mode</strong>.</li>
+        </ul>
+
+        <div class="project-highlight" role="region" aria-label="Slime Time project highlight">
+          <p class="project-highlight-label">Project highlight</p>
+          <ul>
+            <li>
+              Joined a <strong>mostly complete production codebase</strong> and delivered new features while matching the team’s <strong>existing engineering style and conventions</strong>.
+            </li>
+            <li>
+              Refactored level creation around an <strong>abstract factory</strong> and <strong>object pooling</strong>, improving average <strong>frame rate by ~10%</strong> and making the pipeline cleaner for <strong>procedural endless mode</strong> work.
+            </li>
+          </ul>
+        </div>
+
+        <h3><strong>Challenges</strong></h3>
+        <ul>
+          <li>Worked within an existing codebase and maintained quality through regular code review practices.</li>
+        </ul>
+
+        <h3><strong>Results &amp; Impact</strong></h3>
+        <ul>
+          <li>Expanded character roster and purchasable content.</li>
+          <li>Added replayability with procedural endless mode.</li>
+        </ul>
+
+        <h3><strong>Tech Stack</strong></h3>
+        <p><strong>Unity</strong>, <strong>C#</strong>, <strong>Git</strong>, <strong>Procedural Generation</strong>, <strong>IAP Catalog</strong></p>
+
+        <h3><strong>Links</strong></h3>
+        <p class="project-links">
+          <span class="k">Google Play:</span>
+          <a href="https://play.google.com/store/apps/details?id=com.Funstuff.slimetime&hl=en">Slime Time</a>
+        </p>
+
+        <h3><strong>Media</strong></h3>
+        <div class="media-grid">
+          <img src="slime-time-01.png" alt="Slime Time screenshot 1" />
+          <img src="slime-time-02.png" alt="Slime Time screenshot 2" />
+          <img src="slime-time-03.png" alt="Slime Time screenshot 3" />
         </div>
       </article>
     </section>
