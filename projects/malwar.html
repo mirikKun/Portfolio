@@ -66,8 +66,19 @@ upgrades and sub-terminals that type for you. Built for Ludum Dare 60, theme <st
                 timelines, and the longest stretch without a purchase.
               </li>
               <li>
-                Backed the jam build with <strong>310 EditMode tests</strong>, an editor capture tool with a custom GIF
-                encoder that produced every itch.io image, and a versioned WebGL release pipeline (four releases during the jam).
+                Recreated the look and feel of an old console: a custom <strong>CRT shader</strong> with screen curvature,
+                scanlines, and glitch bursts that grow as the wave closes in, plus a raycaster that bends clicks through the
+                same curve so the UI stays clickable where it is drawn.
+              </li>
+              <li>
+                Rendered the whole code-rain wave as <strong>one custom UI mesh</strong> (<code>MaskableGraphic</code>):
+                every falling glyph is a quad sampled straight from the terminal font's dynamic texture, so there is no
+                extra atlas, and the mesh rebuilds its UVs whenever Unity regenerates that texture.
+              </li>
+              <li>
+                Kept the game logic in <strong>plain C# models</strong> wired in a single composition root, with one hit
+                pipeline (parse → damage → bytes) shared by the player and the sub-terminals; that separation is what let
+                the balance simulator run the real systems without a scene.
               </li>
             </ul>
           </section>
