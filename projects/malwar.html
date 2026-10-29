@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MalWar · Andrii Miroshnyk</title>
+  <meta name="description" content="Incremental typing game: type attack phrases to push back a falling wall of code on an infected old PC." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0c111b" />
+  <link rel="canonical" href="https://mirikkun.github.io/Portfolio/projects/malwar.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="MalWar · Andrii Miroshnyk" />
+  <meta property="og:description" content="Incremental typing game: type attack phrases to push back a falling wall of code on an infected old PC." />
+  <meta property="og:url" content="https://mirikkun.github.io/Portfolio/projects/malwar.html" />
+  <meta property="og:image" content="https://mirikkun.github.io/Portfolio/assets/img/malwar-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MalWar · Andrii Miroshnyk" />
+  <meta name="twitter:description" content="Incremental typing game: type attack phrases to push back a falling wall of code on an infected old PC." />
+  <meta name="twitter:image" content="https://mirikkun.github.io/Portfolio/assets/img/malwar-cover.png" />
+  <link rel="stylesheet" href="../assets/css/site.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Andrii Miroshnyk</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="../index.html#jams">Game Jams</a>
+        <a href="../index.html#commercial">Commercial</a>
+        <a href="../index.html#pet">Pet Projects</a>
+        <a href="../index.html#experience">Experience</a>
+        <a class="nav-cv" href="../Andrii_Miroshnyk_Resume.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="../index.html#jams">← Game Jam Projects</a>
+    </nav>
+
+    <article>
+      <header class="project-head">
+        <p class="eyebrow">Ludum Dare 60 · Game Jam</p>
+        <h1>MalWar</h1>
+        <p class="lede">Incremental typing game on an infected old PC: type attack phrases like
+<strong>savage crushing knockdown</strong> to push back a falling wall of code, free disk space, and spend it on
+upgrades and sub-terminals that type for you. Built for Ludum Dare 60, theme <strong>"Old Tech"</strong>.</p>
+        <dl class="facts">
+          <div><dt>Role</dt><dd>Programmer (gameplay systems, UI, tools, audio)</dd></div>
+          <div><dt>Timeline</dt><dd>3 days</dd></div>
+          <div><dt>Team Size</dt><dd>3 people</dd></div>
+        </dl>
+      </header>
+
+      <figure class="cover">
+        <img src="../assets/img/malwar-cover.png" alt="MalWar cover" />
+      </figure>
+      <div class="layout">
+        <div class="content">
+          <section class="highlight" aria-label="Project highlight">
+            <h2>Project highlight</h2>
+            <ul>
+              <li>
+                Built a <strong>headless balance simulator</strong> that plays the whole game without a scene on the same
+                systems, with slow / average / fast typist profiles over seeded runs, and reports time to clear, upgrade
+                timelines, and the longest stretch without a purchase.
+              </li>
+              <li>
+                Backed the jam build with <strong>310 EditMode tests</strong>, an editor capture tool with a custom GIF
+                encoder that produced every itch.io image, and a versioned WebGL release pipeline (four releases during the jam).
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>What I built</h2>
+            <ul>
+              <li>
+                Wrote the phrase parser and damage pipeline: the noun's length sets the damage, adjectives multiply it with
+                diminishing returns, and a diversity bonus rewards varied nouns.
+              </li>
+              <li>
+                Built a hidden <strong>225-word dictionary</strong> with discovery rewards, typo tolerance (edit distance with
+                early exit), a letter-by-letter Dictionary Scanner, and a JSON save kept in the browser (IndexedDB).
+              </li>
+              <li>
+                Implemented <strong>12 upgrades (101 levels)</strong>, auto-typing sub-terminals with Overclock, Autocomplete,
+                Caps Lock, and a terminal command router (<code>help</code>, <code>upgrade</code>, <code>dict</code>,
+                <code>overclock</code>).
+              </li>
+              <li>
+                Added game feel: Matrix-style code rain that advances with your DPS, flying phrase shots, impact popups with
+                multiplier chips, screen shake, and a <strong>CRT shader</strong> that glitches harder as the wave closes in.
+              </li>
+              <li>
+                Generated all sound in code: a small additive <strong>synthesizer</strong> bakes the key clicks, hits, modem
+                screeches, and two synced music layers into WAV files.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Challenges</h2>
+            <ul>
+              <li>
+                Keeping an exponential incremental economy fair for slow and fast typists: bonuses stack additively while
+                only prices grow exponentially.
+              </li>
+              <li>
+                Making the wave readable at any DPS: knockback is normalized to DPS so the front oscillates instead of
+                sticking to the terminal late in the game.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Results &amp; impact</h2>
+            <ul>
+              <li>Published a complete playable WebGL build on itch.io for <strong>Ludum Dare 60</strong>.</li>
+            </ul>
+          </section>
+        </div>
+
+        <aside class="sidebar">
+          <div class="side-block">
+            <h2>Play &amp; links</h2>
+            <ul class="link-list">
+              <li><a class="btn" href="https://enryu-mirik.itch.io/malwar" target="_blank" rel="noopener">itch.io <span>↗</span></a></li>
+            </ul>
+          </div>
+          <div class="side-block">
+            <h2>Tech stack</h2>
+            <ul class="chips">
+              <li>Unity 6</li>
+              <li>URP</li>
+              <li>C#</li>
+              <li>Input System</li>
+              <li>TextMeshPro</li>
+              <li>Unity Test Framework</li>
+              <li>WebGL</li>
+              <li>Git</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <section class="gallery-section">
+        <h2>Gallery</h2>
+        <div class="gallery">
+          <a href="../assets/img/malwar-03.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="../assets/img/malwar-03.png" alt="MalWar attack phrase hitting the code wave" /></a>
+          <a href="../assets/img/malwar-04.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="../assets/img/malwar-04.png" alt="MalWar upgrade menu" /></a>
+          <a href="../assets/img/malwar-05.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="../assets/img/malwar-05.png" alt="MalWar dictionary window" /></a>
+          <a href="../assets/img/malwar-01.gif" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="../assets/img/malwar-01.gif" alt="MalWar typing attack gif" /></a>
+          <a href="../assets/img/malwar-02.gif" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="../assets/img/malwar-02.gif" alt="MalWar overclocked sub-terminals gif" /></a>
+        </div>
+      </section>
+    </article>
+
+    <nav class="pager" aria-label="More projects">
+        <a class="next" href="thought-rot.html"><span>Next →</span>Thought Rot</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Andrii Miroshnyk · Gameplay &amp; Systems Programmer · Copenhagen, Denmark</p>
+      <ul>
+        <li><a href="mailto:mirikandrew@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/andrii-mirik/">LinkedIn</a></li>
+        <li><a href="https://enryu-mirik.itch.io/">itch.io</a></li>
+        <li><a href="https://github.com/mirikKun">GitHub</a></li>
+        <li><a href="../Andrii_Miroshnyk_Resume.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crokobit · Andrii Miroshnyk</title>
+  <meta name="description" content="Idle tycoon mobile game: progression with offline income, multi-phase boss AI, and balance tooling." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0c111b" />
+  <link rel="canonical" href="https://mirikkun.github.io/Portfolio/projects/crokobit.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Crokobit · Andrii Miroshnyk" />
+  <meta property="og:description" content="Idle tycoon mobile game: progression with offline income, multi-phase boss AI, and balance tooling." />
+  <meta property="og:url" content="https://mirikkun.github.io/Portfolio/projects/crokobit.html" />
+  <meta property="og:image" content="https://mirikkun.github.io/Portfolio/assets/img/crokobit-01.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Crokobit · Andrii Miroshnyk" />
+  <meta name="twitter:description" content="Idle tycoon mobile game: progression with offline income, multi-phase boss AI, and balance tooling." />
+  <meta name="twitter:image" content="https://mirikkun.github.io/Portfolio/assets/img/crokobit-01.png" />
+  <link rel="stylesheet" href="../assets/css/site.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Andrii Miroshnyk</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="../index.html#jams">Game Jams</a>
+        <a href="../index.html#commercial">Commercial</a>
+        <a href="../index.html#pet">Pet Projects</a>
+        <a href="../index.html#experience">Experience</a>
+        <a class="nav-cv" href="../Andrii_Miroshnyk_Resume.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="../index.html#unavailable">← No Longer Available</a>
+    </nav>
+
+    <article>
+      <header class="project-head">
+        <p class="eyebrow">BG Games · Commercial (Hidden from Stores)</p>
+        <h1>Crokobit</h1>
+        <p class="lede">Idle tycoon mobile game for iOS. I owned core systems: building and location upgrades with offline progress, boss AI, projectile combat, and the balance tooling behind them.</p>
+        <dl class="facts">
+          <div><dt>Role</dt><dd>Core Systems Developer</dd></div>
+          <div><dt>Timeline</dt><dd>5 months</dd></div>
+          <div><dt>Team Size</dt><dd>8 people</dd></div>
+        </dl>
+      </header>
+
+      <div class="layout">
+        <div class="content">
+          <section class="highlight" aria-label="Project highlight">
+            <h2>Project highlight</h2>
+            <ul>
+              <li>
+                Treated each <strong>city as its own scene</strong>, <strong>loaded asynchronously through Addressables</strong> when the player travels the world map; <strong>location upgrades</strong> swapped scenes by <strong>unloading the old instance</strong> and <strong>streaming in the upgraded layout</strong>.
+              </li>
+              <li>
+                Kept <strong>enemies and buildings simulating</strong> across those transitions because their <strong>business rules stayed decoupled from the view layer</strong>, so gameplay state did not reset when visuals rehydrated.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>What I built</h2>
+            <ul>
+              <li>Built core progression systems: building/location upgrades with offline progress and parameterized level formulas.</li>
+              <li>Implemented boss AI with a custom multi-phase state machine and a flexible projectile combat system.</li>
+              <li>Developed balance/content tooling with ScriptableObject configs and CSV import for fast iteration.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Results &amp; impact</h2>
+            <ul>
+              <li>Improved mass-combat performance by <strong>40%</strong> using object pooling with warm-up.</li>
+              <li>Reduced memory usage by <strong>60%</strong> with Addressables + additive loading while maintaining <strong>60 FPS</strong> on low-end Android devices.</li>
+              <li>Increased player retention by <strong>25%</strong> through accurate offline progress and idle mechanics.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Why it is no longer available</h2>
+            <p>
+              The project became unavailable because it was not updated for a long time, so it was hidden from stores.
+            </p>
+          </section>
+        </div>
+
+        <aside class="sidebar">
+          <div class="side-block">
+            <h2>Tech stack</h2>
+            <ul class="chips">
+              <li>Unity</li>
+              <li>C#</li>
+              <li>Git</li>
+              <li>ScriptableObjects</li>
+              <li>Factory Pattern</li>
+              <li>State Machine</li>
+              <li>Object Pooling</li>
+              <li>Addressables</li>
+              <li>CSV Pipeline</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <section class="gallery-section">
+        <h2>Gallery</h2>
+        <div class="gallery portrait">
+          <a href="../assets/img/crokobit-01.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="../assets/img/crokobit-01.png" alt="Crokobit screenshot 1" /></a>
+          <a href="../assets/img/crokobit-02.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="../assets/img/crokobit-02.png" alt="Crokobit screenshot 2" /></a>
+          <a href="../assets/img/crokobit-03.png" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="../assets/img/crokobit-03.png" alt="Crokobit screenshot 3" /></a>
+        </div>
+      </section>
+    </article>
+
+    <nav class="pager" aria-label="More projects">
+        <a class="prev" href="brain-bricks.html"><span>← Previous</span>Brain Bricks</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Andrii Miroshnyk · Gameplay &amp; Systems Programmer · Copenhagen, Denmark</p>
+      <ul>
+        <li><a href="mailto:mirikandrew@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/andrii-mirik/">LinkedIn</a></li>
+        <li><a href="https://enryu-mirik.itch.io/">itch.io</a></li>
+        <li><a href="https://github.com/mirikKun">GitHub</a></li>
+        <li><a href="../Andrii_Miroshnyk_Resume.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
